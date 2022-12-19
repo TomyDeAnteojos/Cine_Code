@@ -297,11 +297,18 @@ main{
     background-size: cover;
 }
 
+.minion{
+    background-image: url(../assets/gifs/minion.gif);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
 .container{
-    position:absolute;
+    position: absolute;
     left: 48%;
-    top: 45%;
-    transform: translate(-50%,-50%);
+    top: 110%; /* se encarga de que el buscador este en su lugar*/  
+    transform: translate(-50%,-25%);
     padding: 10px;
 }
 
@@ -323,7 +330,7 @@ main{
 }
 
 .btn{
-    position: absolute;
+    position: fixed;
     right: 0;
     top: 0;
     width: 80px;
@@ -355,13 +362,60 @@ main{
     background:#cc0000;
 }
 
-.prueba{
+.films{
     animation-duration: 3s;
     animation-name: slidein;
     color: white;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    align-items: center;
+    justify-items: center;
 }
 
+.films > .card-film {
+    flex: 1 1 150px;
+}
 
+@media screen and (min-width: 1024px ){
+    .films{
+        width: 1000px;
+    }
+}
+
+@media screen and (max-width: 340px){
+    .films{
+        width: 300px;
+    }
+}
+
+@media screen and(min-width: 341px),screen and(max-width:1023) {
+    .films{
+        width: 500px;
+    }
+}
+
+.card-film{
+    background: linear-gradient(
+        135deg,
+        rgba(255,255,255,0.1),
+        rgba(255,255,255,0.1),
+    );
+    backdrop-filter: blur(21px);
+    -webkit-backdrop-filter: blur(21px);
+    box-shadow: 8px 32px 0 rgba(0, 0, 0,0.36);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 24px;
+    padding: 40px;
+    margin: auto 1.5rem;
+
+
+}
+
+.card-film img{
+    height: 300px;
+    width: 200px;
+}
 
 @keyframes slidein {
     from {
